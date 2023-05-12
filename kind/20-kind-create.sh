@@ -56,6 +56,10 @@ containerdConfigPatches:
     endpoint = ["http://${DOCKERIO_CACHE_NAME}:${DOCKERIO_CACHE_PORT}"]
   [plugins."io.containerd.grpc.v1.cri".registry.configs."docker.io".tls]
     insecure_skip_verify = true
+  [plugins."io.containerd.grpc.v1.cri".registry.mirrors."registry-gloo:5000"]
+      endpoint = ["http://${GLOO_CACHE_NAME}:5000"]
+  [plugins."io.containerd.grpc.v1.cri".registry.configs."registry-gloo:5000".tls]
+    insecure_skip_verify = true
   [plugins."io.containerd.grpc.v1.cri".registry.mirrors."quay.io"]
     endpoint = ["http://${QUAYIO_CACHE_NAME}:${QUAYIO_CACHE_PORT}"]
   [plugins."io.containerd.grpc.v1.cri".registry.configs."quay.io".tls]
@@ -71,15 +75,15 @@ containerdConfigPatches:
 EOF
 
 # KinD image
-kind_img_loaded=$(docker image ls --format '{{.Repository}}:{{.Tag}}' | grep "kindest/node:${KIND_NODE_VERSION}" | wc -l)
-if [ ${kind_img_loaded} -ne 1 ]; then
-  echo "Loading the KinD node image to the VM..."
-  docker load < ${LIMA_DATA_DIR}/kind-${KIND_NODE_VERSION}-image.tar
-fi
+# kind_img_loaded=$(docker image ls --format '{{.Repository}}:{{.Tag}}' | grep "kindest/node:${KIND_NODE_VERSION}" | wc -l)
+# if [ ${kind_img_loaded} -ne 1 ]; then
+#   echo "Loading the KinD node image to the VM..."
+#   docker load < ${LIMA_DATA_DIR}/kind-${KIND_NODE_VERSION}-image.tar
+# fi
 
 # KinD cluster
 echo "Creating the KinD cluster with name ${NAME}"
-kind create cluster -q --config=${CLUSTER_CONFIG_FILE} --image kindest/node:${KIND_NODE_VERSION} --retain
+kind create cluster --config=${CLUSTER_CONFIG_FILE} --image kindest/node:${KIND_NODE_VERSION} --retain
 #kind export logs --name ${NAME}; kind delete cluster
 echo "KinD cluster creation complete!"
 

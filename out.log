@@ -1,0 +1,1034 @@
+/Users/jona/.kube/kind/3-cluster2.yaml
+/Users/jona/.kube/kind/2-cluster1.yaml
+/Users/jona/.kube/kind/3-cluster2-metallb.yaml
+/Users/jona/.kube/kind/2-cluster1-metallb.yaml
+/Users/jona/.kube/kind/1-mgmt.yaml
+Creating the KinD cluster with name 3-cluster2
+/Users/jona/.kube/kind/1-mgmt-metallb.yaml
+Creating the KinD cluster with name 2-cluster1
+Creating the KinD cluster with name 1-mgmt
+Creating cluster "3-cluster2" ...
+ • Ensuring node image (kindest/node:v1.23.4) 🖼  ...
+Creating cluster "1-mgmt" ...
+ • Ensuring node image (kindest/node:v1.23.4) 🖼  ...
+Creating cluster "2-cluster1" ...
+ • Ensuring node image (kindest/node:v1.23.4) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.23.4) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Ensuring node image (kindest/node:v1.23.4) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Ensuring node image (kindest/node:v1.23.4) 🖼
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Preparing nodes 📦 
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✗ Starting control-plane 🕹️
+ ✗ Starting control-plane 🕹️
+ ✗ Starting control-plane 🕹️
+ERROR: failed to create cluster: failed to init node with kubeadm: command "docker exec --privileged 2-cluster1-control-plane kubeadm init --skip-phases=preflight --config=/kind/kubeadm.conf --skip-token-print --v=6" failed with error: exit status 255
+ERROR: failed to create cluster: failed to init node with kubeadm: command "docker exec --privileged 1-mgmt-control-plane kubeadm init --skip-phases=preflight --config=/kind/kubeadm.conf --skip-token-print --v=6" failed with error: exit status 255
+ERROR: failed to create cluster: failed to init node with kubeadm: command "docker exec --privileged 3-cluster2-control-plane kubeadm init --skip-phases=preflight --config=/kind/kubeadm.conf --skip-token-print --v=6" failed with error: exit status 255
+
+Command Output: I0124 14:34:55.658885     171 initconfiguration.go:248] loading configuration from "/kind/kubeadm.conf"
+[config] WARNING: Ignored YAML document with GroupVersionKind kubeadm.k8s.io/v1beta3, Kind=JoinConfiguration
+[init] Using Kubernetes version: v1.23.4
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+I0124 14:34:55.718180     171 certs.go:112] creating a new certificate authority for ca
+[certs] Generating "ca" certificate and key
+I0124 14:34:55.908870     171 certs.go:522] validating certificate period for ca certificate
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [2-cluster1-control-plane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local localhost] and IPs [10.2.0.1 172.18.0.3 127.0.0.1]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+I0124 14:34:56.389943     171 certs.go:112] creating a new certificate authority for front-proxy-ca
+[certs] Generating "front-proxy-ca" certificate and key
+I0124 14:34:56.525583     171 certs.go:522] validating certificate period for front-proxy-ca certificate
+[certs] Generating "front-proxy-client" certificate and key
+I0124 14:34:56.652599     171 certs.go:112] creating a new certificate authority for etcd-ca
+[certs] Generating "etcd/ca" certificate and key
+I0124 14:34:57.010576     171 certs.go:522] validating certificate period for etcd/ca certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [2-cluster1-control-plane localhost] and IPs [172.18.0.3 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [2-cluster1-control-plane localhost] and IPs [172.18.0.3 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+I0124 14:34:58.092986     171 certs.go:78] creating new public/private key files for signing service account users
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+I0124 14:34:58.207060     171 kubeconfig.go:103] creating kubeconfig file for admin.conf
+[kubeconfig] Writing "admin.conf" kubeconfig file
+I0124 14:34:58.413059     171 kubeconfig.go:103] creating kubeconfig file for kubelet.conf
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+I0124 14:34:58.550559     171 kubeconfig.go:103] creating kubeconfig file for controller-manager.conf
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+I0124 14:34:58.611582     171 kubeconfig.go:103] creating kubeconfig file for scheduler.conf
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+I0124 14:34:58.905638     171 kubelet.go:65] Stopping the kubelet
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+I0124 14:34:59.693395     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:34:59.695482     171 certs.go:522] validating certificate period for CA certificate
+I0124 14:34:59.695643     171 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-apiserver"
+I0124 14:34:59.695657     171 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-apiserver"
+I0124 14:34:59.695661     171 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-apiserver"
+I0124 14:34:59.695663     171 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-apiserver"
+I0124 14:34:59.695666     171 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-apiserver"
+I0124 14:34:59.699578     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-apiserver" to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+I0124 14:34:59.699614     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:34:59.699902     171 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-controller-manager"
+I0124 14:34:59.699908     171 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-controller-manager"
+I0124 14:34:59.699911     171 manifests.go:125] [control-plane] adding volume "flexvolume-dir" for component "kube-controller-manager"
+I0124 14:34:59.699914     171 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-controller-manager"
+I0124 14:34:59.699916     171 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-controller-manager"
+I0124 14:34:59.699919     171 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-controller-manager"
+I0124 14:34:59.699922     171 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+I0124 14:34:59.700499     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-controller-manager" to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+I0124 14:34:59.700516     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:34:59.700688     171 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-scheduler"
+I0124 14:34:59.701013     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-scheduler" to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+I0124 14:34:59.702800     171 local.go:65] [etcd] wrote Static Pod manifest for a local etcd member to "/etc/kubernetes/manifests/etcd.yaml"
+I0124 14:34:59.702916     171 waitcontrolplane.go:91] [wait-control-plane] Waiting for the API server to be healthy
+I0124 14:34:59.704208     171 loader.go:372] Config loaded from file:  /etc/kubernetes/admin.conf
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+I0124 14:34:59.728762     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 13 milliseconds
+I0124 14:35:00.231159     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:00.731744     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.231074     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.732146     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.230958     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.731667     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.230947     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.731842     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.233973     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.736369     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:05.231132     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:05.731258     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.231111     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.732329     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:07.231341     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:07.731435     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.231019     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.731628     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.232653     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.732724     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.232125     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.733063     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:11.231832     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:11.733632     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:12.230820     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:12.732219     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:13.231926     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:13.732839     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:14.231030     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:14.733597     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.234920     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.730984     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.235917     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.734253     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:17.231961     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:17.731868     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:18.231696     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:18.731272     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:19.231027     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:19.732089     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:20.234783     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:20.730731     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.231200     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.733800     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:22.233100     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:22.731788     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.235862     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.736846     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:24.235663     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:24.730834     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:25.232254     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:25.733509     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:26.230749     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:26.731663     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:27.231403     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:27.733240     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.231670     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.733679     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:29.232674     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:29.731248     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:30.230867     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:30.732499     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:31.230720     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:31.730989     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:32.232277     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:32.732106     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:33.230743     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:33.731541     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.237476     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.732509     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:35.231135     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:35.736046     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:36.232187     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:36.731985     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.234660     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.735428     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:38.230790     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:38.730941     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:39.231281     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] Initial timeout of 40s passed.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:39.731294     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:40.230817     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:40.730820     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:41.239750     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:41.739649     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:35:42.230657     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:42.734513     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:43.231601     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:43.731228     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:44.232156     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:44.731958     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:45.232398     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:45.731646     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.235743     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.738821     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 4 milliseconds
+I0124 14:35:47.231288     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:47.730964     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:48.232539     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:48.731798     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:49.231292     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:49.731601     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.231121     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.731295     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.231294     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.737690     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:52.232945     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:52.731059     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.231215     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.736673     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:35:54.231762     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:54.731784     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:55.231236     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:55.733534     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:56.231797     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:56.731794     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:57.234712     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:57.730726     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.231535     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.733720     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:59.234929     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:59.730938     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:00.233048     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:00.734537     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:01.231200     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:01.731101     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.231889     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.732150     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.231586     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.731174     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:04.234147     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:04.731233     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.232155     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.736005     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.233178     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.731693     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.231705     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.734980     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 4 milliseconds
+I0124 14:36:08.230881     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:08.731264     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:09.231610     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:09.732003     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.231531     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.731850     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:11.234896     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:11.731789     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.232226     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.733042     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:13.230804     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:13.731194     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:14.232095     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:36:14.731580     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:15.230826     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:15.735542     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:16.231646     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:16.733754     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:17.231125     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:17.734444     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:18.234035     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:18.732619     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:19.231054     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:19.737852     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 6 milliseconds
+I0124 14:36:20.235809     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:20.731655     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.231383     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.732158     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.231502     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.731348     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:23.239872     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:23.731393     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.231102     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.731771     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:25.232318     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:25.731521     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.231040     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.736461     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 4 milliseconds
+I0124 14:36:27.231449     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:27.731163     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:28.232169     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:28.731713     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:29.231444     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:29.731742     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:30.238742     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:30.731189     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:31.231512     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:31.733152     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.237492     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.731402     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.231289     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.735597     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:34.233189     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:34.731900     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.231443     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.732380     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:36.232201     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:36.731842     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.231825     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.731970     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.230922     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.736486     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:39.232593     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:39.730819     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.230821     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.732770     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:41.232259     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:41.731688     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.231000     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.731270     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.230908     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.731177     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.231048     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.733630     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:45.230950     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:45.731741     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:46.232882     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:46.731382     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.231145     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.730690     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.231920     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.731611     171 round_trippers.go:553] GET https://2-cluster1-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+
+Command Output: I0124 14:34:55.658954     171 initconfiguration.go:248] loading configuration from "/kind/kubeadm.conf"
+[config] WARNING: Ignored YAML document with GroupVersionKind kubeadm.k8s.io/v1beta3, Kind=JoinConfiguration
+[init] Using Kubernetes version: v1.23.4
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+I0124 14:34:55.720735     171 certs.go:112] creating a new certificate authority for ca
+[certs] Generating "ca" certificate and key
+I0124 14:34:56.140075     171 certs.go:522] validating certificate period for ca certificate
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [1-mgmt-control-plane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local localhost] and IPs [10.1.0.1 172.18.0.4 127.0.0.1]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+I0124 14:34:56.361020     171 certs.go:112] creating a new certificate authority for front-proxy-ca
+[certs] Generating "front-proxy-ca" certificate and key
+I0124 14:34:56.529815     171 certs.go:522] validating certificate period for front-proxy-ca certificate
+[certs] Generating "front-proxy-client" certificate and key
+I0124 14:34:56.643619     171 certs.go:112] creating a new certificate authority for etcd-ca
+[certs] Generating "etcd/ca" certificate and key
+I0124 14:34:56.802186     171 certs.go:522] validating certificate period for etcd/ca certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [1-mgmt-control-plane localhost] and IPs [172.18.0.4 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [1-mgmt-control-plane localhost] and IPs [172.18.0.4 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+I0124 14:34:57.944405     171 certs.go:78] creating new public/private key files for signing service account users
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+I0124 14:34:58.065263     171 kubeconfig.go:103] creating kubeconfig file for admin.conf
+[kubeconfig] Writing "admin.conf" kubeconfig file
+I0124 14:34:58.321127     171 kubeconfig.go:103] creating kubeconfig file for kubelet.conf
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+I0124 14:34:58.458023     171 kubeconfig.go:103] creating kubeconfig file for controller-manager.conf
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+I0124 14:34:58.789741     171 kubeconfig.go:103] creating kubeconfig file for scheduler.conf
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+I0124 14:34:58.956000     171 kubelet.go:65] Stopping the kubelet
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+I0124 14:34:59.717023     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:34:59.720586     171 certs.go:522] validating certificate period for CA certificate
+I0124 14:34:59.722642     171 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-apiserver"
+I0124 14:34:59.722668     171 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-apiserver"
+I0124 14:34:59.722672     171 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-apiserver"
+I0124 14:34:59.722675     171 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-apiserver"
+I0124 14:34:59.722678     171 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+I0124 14:34:59.725942     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-apiserver" to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+I0124 14:34:59.725973     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:34:59.729032     171 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-controller-manager"
+I0124 14:34:59.729047     171 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-controller-manager"
+I0124 14:34:59.729051     171 manifests.go:125] [control-plane] adding volume "flexvolume-dir" for component "kube-controller-manager"
+I0124 14:34:59.729053     171 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-controller-manager"
+I0124 14:34:59.729056     171 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-controller-manager"
+I0124 14:34:59.729059     171 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-controller-manager"
+I0124 14:34:59.729062     171 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-controller-manager"
+I0124 14:34:59.729839     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-controller-manager" to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+I0124 14:34:59.729867     171 manifests.go:99] [control-plane] getting StaticPodSpecs
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+I0124 14:34:59.730181     171 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-scheduler"
+I0124 14:34:59.730666     171 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-scheduler" to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+I0124 14:34:59.732021     171 local.go:65] [etcd] wrote Static Pod manifest for a local etcd member to "/etc/kubernetes/manifests/etcd.yaml"
+I0124 14:34:59.732105     171 waitcontrolplane.go:91] [wait-control-plane] Waiting for the API server to be healthy
+I0124 14:34:59.733118     171 loader.go:372] Config loaded from file:  /etc/kubernetes/admin.conf
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+I0124 14:34:59.749976     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 8 milliseconds
+I0124 14:35:00.252756     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:00.752989     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.252437     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.752322     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.252071     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.752473     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.252699     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.752151     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.253180     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.752909     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:05.252965     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:05.752703     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.252403     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.752764     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:07.251979     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:07.753059     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.252412     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.753112     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.252798     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.752668     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.251957     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.753147     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:11.253169     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:11.753021     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:12.252231     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:12.753129     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:13.253272     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:13.752131     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:14.251980     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:14.755251     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.255902     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.752142     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.252879     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.753111     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:17.252099     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:17.753049     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:18.252944     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:18.756500     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:19.252074     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:19.752473     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:20.252629     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:20.752665     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.251932     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.755447     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:35:22.256487     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:22.752831     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.252311     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.754371     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:24.252968     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:24.752519     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:25.253996     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:25.756583     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:26.252522     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:26.752423     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:27.251975     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:27.752180     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.252126     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.753452     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:29.253766     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:29.754267     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:30.252331     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:30.757292     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:35:31.255261     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:31.752704     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:32.252790     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:32.753030     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:33.252261     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:33.751950     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.252196     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.752142     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:35.252216     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:35.752096     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:36.252387     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:36.752189     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.252660     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.752845     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:38.255502     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:38.753048     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:39.252267     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] Initial timeout of 40s passed.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:39.754131     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:40.252177     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:40.752063     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:41.253012     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:41.756132     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:42.253201     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:42.754336     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:43.254149     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:43.753022     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:44.253060     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:44.752416     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:45.253471     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:45.752030     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.253377     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.757154     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:47.252127     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:47.752056     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:48.254536     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:48.751950     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:49.252366     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:49.752094     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.254311     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.752445     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.255845     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.752410     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:52.252899     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:52.752157     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.252358     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.753039     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:54.252875     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:54.752898     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:55.252928     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:55.755086     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:56.253165     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:56.752523     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:57.252155     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:57.753045     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.252651     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.757241     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:59.254378     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:59.752785     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:00.253377     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:00.753458     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:01.252575     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:01.752083     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.253839     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.753095     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.254171     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.753287     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:04.252567     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:04.752506     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.255278     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.753164     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.253930     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.752245     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.251977     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.753183     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:08.252913     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:08.752469     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:09.253980     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:09.752949     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.252509     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.758981     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:11.260046     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:11.752283     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.252729     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.753929     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:13.259525     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:13.752879     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:14.251963     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:36:14.752974     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:15.252842     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:15.754825     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:16.254339     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:16.756375     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:36:17.253453     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:17.755964     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:36:18.253566     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:18.752914     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:19.252218     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:19.754386     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:20.252083     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:20.753168     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.254393     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.752839     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.252109     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.752186     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:23.254198     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:23.751819     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.252820     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.756247     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:25.255815     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:25.752444     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.252058     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.759385     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:27.253238     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:27.752948     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:28.252419     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:28.751893     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:29.252930     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:29.752564     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:30.255816     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:30.758958     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:31.252728     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:31.754099     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.252360     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.752581     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.252704     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.752274     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:34.252811     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:34.752334     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.253613     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.754344     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:36.254948     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:36.752116     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.252548     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.752753     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.251772     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.753016     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:39.253585     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:39.752613     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.252575     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.752379     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:41.252046     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:41.752125     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.252285     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.752083     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.252076     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.752915     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.253002     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.756045     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:45.252344     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:45.752582     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:46.253592     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:46.752211     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.252897     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.752606     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.253395     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.752656     171 round_trippers.go:553] GET https://1-mgmt-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+
+Command Output: I0124 14:34:55.377218     170 initconfiguration.go:248] loading configuration from "/kind/kubeadm.conf"
+[config] WARNING: Ignored YAML document with GroupVersionKind kubeadm.k8s.io/v1beta3, Kind=JoinConfiguration
+[init] Using Kubernetes version: v1.23.4
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+I0124 14:34:55.440612     170 certs.go:112] creating a new certificate authority for ca
+[certs] Generating "ca" certificate and key
+I0124 14:34:55.708148     170 certs.go:522] validating certificate period for ca certificate
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [3-cluster2-control-plane kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local localhost] and IPs [10.3.0.1 172.18.0.2 127.0.0.1]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+I0124 14:34:56.054505     170 certs.go:112] creating a new certificate authority for front-proxy-ca
+[certs] Generating "front-proxy-ca" certificate and key
+I0124 14:34:56.241667     170 certs.go:522] validating certificate period for front-proxy-ca certificate
+[certs] Generating "front-proxy-client" certificate and key
+I0124 14:34:56.463659     170 certs.go:112] creating a new certificate authority for etcd-ca
+[certs] Generating "etcd/ca" certificate and key
+I0124 14:34:56.847043     170 certs.go:522] validating certificate period for etcd/ca certificate
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [3-cluster2-control-plane localhost] and IPs [172.18.0.2 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [3-cluster2-control-plane localhost] and IPs [172.18.0.2 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+I0124 14:34:57.947085     170 certs.go:78] creating new public/private key files for signing service account users
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+I0124 14:34:58.487947     170 kubeconfig.go:103] creating kubeconfig file for admin.conf
+[kubeconfig] Writing "admin.conf" kubeconfig file
+I0124 14:34:58.935438     170 kubeconfig.go:103] creating kubeconfig file for kubelet.conf
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+I0124 14:34:59.138679     170 kubeconfig.go:103] creating kubeconfig file for controller-manager.conf
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+I0124 14:34:59.475994     170 kubeconfig.go:103] creating kubeconfig file for scheduler.conf
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+I0124 14:34:59.724281     170 kubelet.go:65] Stopping the kubelet
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Starting the kubelet
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+I0124 14:35:00.454077     170 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:35:00.455998     170 certs.go:522] validating certificate period for CA certificate
+I0124 14:35:00.456159     170 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-apiserver"
+I0124 14:35:00.456170     170 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-apiserver"
+I0124 14:35:00.456173     170 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-apiserver"
+I0124 14:35:00.456176     170 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-apiserver"
+I0124 14:35:00.456180     170 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-apiserver"
+I0124 14:35:00.459986     170 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-apiserver" to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+I0124 14:35:00.460017     170 manifests.go:99] [control-plane] getting StaticPodSpecs
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+I0124 14:35:00.460295     170 manifests.go:125] [control-plane] adding volume "ca-certs" for component "kube-controller-manager"
+I0124 14:35:00.460304     170 manifests.go:125] [control-plane] adding volume "etc-ca-certificates" for component "kube-controller-manager"
+I0124 14:35:00.460307     170 manifests.go:125] [control-plane] adding volume "flexvolume-dir" for component "kube-controller-manager"
+I0124 14:35:00.460310     170 manifests.go:125] [control-plane] adding volume "k8s-certs" for component "kube-controller-manager"
+I0124 14:35:00.460313     170 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-controller-manager"
+I0124 14:35:00.460345     170 manifests.go:125] [control-plane] adding volume "usr-local-share-ca-certificates" for component "kube-controller-manager"
+I0124 14:35:00.460374     170 manifests.go:125] [control-plane] adding volume "usr-share-ca-certificates" for component "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+I0124 14:35:00.461112     170 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-controller-manager" to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+I0124 14:35:00.461132     170 manifests.go:99] [control-plane] getting StaticPodSpecs
+I0124 14:35:00.461355     170 manifests.go:125] [control-plane] adding volume "kubeconfig" for component "kube-scheduler"
+I0124 14:35:00.461710     170 manifests.go:154] [control-plane] wrote static Pod manifest for component "kube-scheduler" to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+I0124 14:35:00.463208     170 local.go:65] [etcd] wrote Static Pod manifest for a local etcd member to "/etc/kubernetes/manifests/etcd.yaml"
+I0124 14:35:00.463289     170 waitcontrolplane.go:91] [wait-control-plane] Waiting for the API server to be healthy
+I0124 14:35:00.464292     170 loader.go:372] Config loaded from file:  /etc/kubernetes/admin.conf
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+I0124 14:35:00.479723     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 7 milliseconds
+I0124 14:35:00.982263     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.482821     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:01.982337     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.481996     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:02.982797     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.482186     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:03.983693     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.485307     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:04.981972     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:05.482706     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:05.982208     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.481857     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:06.983589     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:07.481785     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:07.983269     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.482777     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:08.981787     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.486897     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:09.983435     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.482707     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:10.986788     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:11.482109     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:11.981742     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:12.482505     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:12.982207     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:13.488387     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:13.982440     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:14.482443     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:14.985386     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.482089     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:15.982014     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.481849     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:16.985862     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:17.482253     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:17.982399     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:18.495382     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 13 milliseconds
+I0124 14:35:18.981914     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:19.482977     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:19.983968     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:20.484470     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:20.982504     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.482026     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:21.982951     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:22.482381     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:22.982680     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.482808     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:23.985304     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:24.482725     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:24.983089     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:25.490502     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:25.982633     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:26.481745     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:26.982180     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:27.483587     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:27.981542     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.482030     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:28.981676     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:29.484102     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:29.982755     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:30.484180     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:30.982376     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:31.481862     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:31.982326     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:32.481824     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:32.982265     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:33.481910     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:33.982610     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.483437     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:34.982185     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:35.481695     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:35.986468     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:36.482455     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:36.982695     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.484004     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:37.983351     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:38.482072     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:38.981748     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:39.487131     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:39.981600     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] Initial timeout of 40s passed.
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:40.481825     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:40.982374     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:41.493207     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 7 milliseconds
+I0124 14:35:41.982658     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:42.482041     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:42.982813     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:43.482591     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:43.981864     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:44.482449     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:44.982472     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:45.482434     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:45.981726     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.486747     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:46.982556     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:47.481802     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:47.983913     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:48.484312     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:35:48.981742     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:49.481882     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:49.982347     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.484701     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:50.982228     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.486074     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:51.982617     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:52.482377     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:52.981873     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.482349     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:53.982038     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:54.482550     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:54.981954     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:35:55.483381     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:35:55.982851     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:56.482186     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:56.984975     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:57.482491     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:57.981837     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.483897     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:58.987183     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:59.482487     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:35:59.986794     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:00.482733     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:00.986804     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:01.482819     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:01.982334     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.482670     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:02.982188     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.482961     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:03.984504     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:04.485362     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:04.981908     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.482315     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:05.986424     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.482088     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:06.982598     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.481918     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:07.982884     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:08.482204     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:08.982938     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:09.483915     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:09.982450     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.482932     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:10.983925     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:11.483287     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:11.982751     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.481930     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:12.984028     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:13.482801     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:13.982360     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:14.481939     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:14.983651     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+[kubelet-check] It seems like the kubelet isn't running or healthy.
+[kubelet-check] The HTTP call equal to 'curl -sSL http://localhost:10248/healthz' failed with error: Get "http://localhost:10248/healthz": dial tcp [::1]:10248: connect: connection refused.
+I0124 14:36:15.482127     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:15.981693     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:16.486825     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:16.982036     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:17.481865     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:17.986424     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 4 milliseconds
+I0124 14:36:18.485414     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 3 milliseconds
+I0124 14:36:18.981669     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:19.482688     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:19.983873     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:20.481565     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:20.982151     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.487851     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:21.982368     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.481363     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:22.985417     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:23.493246     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 10 milliseconds
+I0124 14:36:23.983061     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.483161     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:24.987760     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:25.490315     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:25.982039     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.484476     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:26.984588     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 2 milliseconds
+I0124 14:36:27.481776     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:27.981977     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:28.487989     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:28.982921     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:29.482159     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:29.981726     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:30.486218     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:30.982752     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:31.482272     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:31.986351     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.482530     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:32.981679     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.482923     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:33.984713     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:34.481932     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:34.981952     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.482741     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:35.983763     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:36.482814     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:36.982307     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.484752     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:37.981780     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.482247     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:38.986617     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:39.486483     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:39.981519     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.484971     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:40.982911     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:41.482408     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:41.982003     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.482621     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:42.982577     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.482023     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:43.982246     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.484290     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:44.982662     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:45.485258     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:45.984023     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 1 milliseconds
+I0124 14:36:46.486868     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:46.982509     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.482405     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:47.981707     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.481930     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+I0124 14:36:48.982179     170 round_trippers.go:553] GET https://3-cluster2-control-plane:6443/healthz?timeout=10s  in 0 milliseconds
+KinD cluster creation complete!
+KinD cluster creation complete!
+KinD cluster creation complete!
+Loading the MetalLB images to the KinD node
+Loading the MetalLB images to the KinD node
+Loading the MetalLB images to the KinD node
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=3-cluster2 --format '{{.Names}}'" failed with error: exit status 1
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=2-cluster1 --format '{{.Names}}'" failed with error: exit status 1
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=1-mgmt --format '{{.Names}}'" failed with error: exit status 1
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=2-cluster1 --format '{{.Names}}'" failed with error: exit status 1
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=3-cluster2 --format '{{.Names}}'" failed with error: exit status 1
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+ERROR: failed to list nodes: command "docker ps -a --filter label=io.x-k8s.kind.cluster=1-mgmt --format '{{.Names}}'" failed with error: exit status 1
+
+Command Output: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Installing MetalLB
+Installing MetalLB
+Installing MetalLB
+error: context "kind-1-mgmt" does not exist
+error: context "kind-2-cluster1" does not exist
+error: context "kind-3-cluster2" does not exist
+error: context "kind-3-cluster2" does not exist
+error: context "kind-2-cluster1" does not exist
+error: context "kind-1-mgmt" does not exist
+error: context "kind-2-cluster1" does not exist
+error: context "kind-1-mgmt" does not exist
+error: context "kind-3-cluster2" does not exist
+error: context "kind-2-cluster1" does not exist
+error: context "kind-1-mgmt" does not exist
+error: context "kind-3-cluster2" does not exist
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+error: context "kind-1-mgmt" does not exist
+error: context "kind-2-cluster1" does not exist
+error: context "kind-3-cluster2" does not exist
+Configuring image registry mirrors
+Configuring image registry mirrors
+Configuring image registry mirrors
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Loading the distribution/distribution:2.8.1 image into the VM...
+Loading the distribution/distribution:2.8.1 image into the VM...
+Loading the distribution/distribution:2.8.1 image into the VM...
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?
+Starting docker.io mirror
+Starting docker.io mirror
+Starting docker.io mirror
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+Starting quay.io mirror
+Starting quay.io mirror
+Starting quay.io mirror
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+Starting gcr.io mirror
+Starting gcr.io mirror
+Starting gcr.io mirror
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+Starting us-docker.pkg.dev mirror
+Starting us-docker.pkg.dev mirror
+Starting us-docker.pkg.dev mirror
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+docker: Cannot connect to the Docker daemon at unix:///Users/jona/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+Setting up the network for the docker registries
+Setting up the network for the docker registries
+Setting up the network for the docker registries
+
+real	2m2.824s
+user	0m0.464s
+sys	0m0.272s
+
+real	2m2.824s
+user	0m0.453s
+sys	0m0.267s
+
+real	2m2.824s
+user	0m0.462s
+sys	0m0.277s
